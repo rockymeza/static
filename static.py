@@ -397,12 +397,13 @@ def command():
 
 
 def test():
+    from wsgiref.validate import validator
     magics = StringMagic(title="String Test"), KidMagic(title="Kid Test")
     app = Shock('testdata/pub', magics=magics)
     try:
-        make_server('localhost', 9999, app).serve_forever()
+        make_server('localhost', 9999, validator(app)).serve_forever()
     except KeyboardInterrupt, ki:
-        print "Cio, baby!"
+        print "Ciao, baby!"
 
 
 if __name__ == '__main__':
