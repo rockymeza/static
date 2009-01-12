@@ -9,7 +9,7 @@
     <h1>$title</h1>
     <p>
         If everything is working, the title above should be: "String Test" 
-        and below you should see that path info is '/shock/sub.html'.
+        and below you should see that path info is '/sub.html'.
         You should receive no 304s from this resource.
     </p>
     <p>
