@@ -29,7 +29,7 @@ except:
     from distutils.core import setup
 
 setup(name='static',
-      version='0.3.6',
+      version='0.4',
       description=\
         'A really simple WSGI way to serve static (or mixed) content.',
       long_description="""\
