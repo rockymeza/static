@@ -1,6 +1,6 @@
 """setup - setuptools based setup for static
 
-Copyright (C) 2006-2008 Luke Arno - http://lukearno.com/
+Copyright (C) 2006-2009 Luke Arno - http://lukearno.com/
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -31,17 +31,17 @@ except:
 setup(name='static',
       version='0.3.6',
       description=\
-        'A stupidly simple WSGI way to serve static (or mixed) content.',
+        'A really simple WSGI way to serve static (or mixed) content.',
       long_description="""\
 This distribution provides an easy way to include static content 
 in your WSGI applications. There is a convenience method for serving 
 files located via pkg_resources. There are also facilities for serving 
 mixed (static and dynamic) content using "magic" file handlers. 
-Python 2.4 string substitution and Kid template support are provided 
+Python builtin string substitution and Kid template support are provided 
 and it is easy to roll your own handlers. Note that this distribution 
-does not require Python 2.4 or Kid unless you want to use those types of 
-templates. Also provides a command of the same name as a convenience
-when you just want to share a little content over HTTP, ad hoc.""",
+does not require Kid unless you want to use that type of template. Also 
+provides a command of the same name as a convenience when you just want 
+to share a little content over HTTP, ad hoc.""",
       author='Luke Arno',
       author_email='luke.arno@gmail.com',
       url='http://lukearno.com/projects/static/',
@@ -55,7 +55,7 @@ when you just want to share a little content over HTTP, ad hoc.""",
               static=static:command
       """,
       keywords="wsgi web http static content webapps",
-      classifiers=['Development Status :: 3 - Alpha',
+      classifiers=['Development Status :: 4 - Beta',
                    'Environment :: Web Environment',
                    'Intended Audience :: Developers',
                    'License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)',

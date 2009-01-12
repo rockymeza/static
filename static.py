@@ -3,7 +3,7 @@
 
 (See the docstrings of the various functions and classes.)
 
-Copyright (C) 2006-2008 Luke Arno - http://lukearno.com/
+Copyright (C) 2006-2009 Luke Arno - http://lukearno.com/
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public

@@ -1,6 +1,6 @@
 = static =
 
-A stupidly simple WSGI way to serve static (or mixed) content.
+A really simple WSGI way to serve static (or mixed) content.
 
 See docstrings of static module for details.
 
@@ -8,7 +8,7 @@ See docstrings of static module for details.
 
 Created and maintained by Luke Arno <luke.arno@gmail.com>
 
-Copyright (C) 2006-2008 Luke Arno - http://lukearno.com/
+Copyright (C) 2006-2009 Luke Arno - http://lukearno.com/
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
