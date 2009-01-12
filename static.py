@@ -33,6 +33,7 @@ import string
 import sys
 from os import path, stat
 from wsgiref import util
+from wsgiref.headers import Headers
 from wsgiref.simple_server import make_server
 from optparse import OptionParser
 
@@ -47,7 +48,7 @@ class MagicError(Exception): pass
 
 
 class StatusApp:
-    """A WSGI app that just returns the given status."""
+    """Used by WSGI apps to return some HTTP status."""
     
     def __init__(self, status, message=None):
         self.status = status
@@ -57,11 +58,13 @@ class StatusApp:
             self.message = message
         
     def __call__(self, environ, start_response, headers=[]):
+        if self.message:
+            Headers(headers).add_header('Content-type', 'text/plain')
         start_response(self.status, headers)
-        if environ['REQUEST_METHOD'] == 'GET':
-            return [self.message]
-        else:
+        if environ['REQUEST_METHOD'] == 'HEAD':
             return [""]
+        else:
+            return [self.message]
 
 
 class Cling(object):
@@ -91,7 +94,8 @@ class Cling(object):
     def __call__(self, environ, start_response):
         """Respond to a request when called in the usual WSGI way."""
         if environ['REQUEST_METHOD'] not in ('GET', 'HEAD'):
-            return self.method_not_allowed(environ, start_response)
+            headers = [('Allow', 'GET, HEAD')]
+            return self.method_not_allowed(environ, start_response, headers)
         path_info = environ.get('PATH_INFO', '')
         full_path = self._full_path(path_info)
         if not self._is_under_root(full_path):
